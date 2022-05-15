@@ -1,0 +1,25 @@
+--CREATE STORE DATABASE
+
+CREATE TABLE autoparts (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, cost INTEGER, selling_price INTEGER, aisle INTEGER);
+INSERT INTO autoparts VALUES
+(1, "Oil Filters", 10, 5, 9, 1),
+(2, "Fuel Filters", 5, 12, 22, 1),
+(3, "Motor Oil", 30, 15, 29,2),
+(4, "Wipers", 50, 7, 26, 3),
+(5, "Brake Pad", 20, 12, 24, 4),
+(6, "Brake Rotor", 10, 42, 76, 4),
+(7, "Brake Drum", 6, 23, 36, 4),
+(8, "Tools", 70, 16, 39, 5),
+(9, "Headlights", 100, 6, 19, 6),
+(10, "Tail Lights", 40, 1, 5, 6),
+(11, "Gaskets", 41, 10, 15, 7),
+(12, "Bearings", 23, 27, 44, 7),
+(13, "Seals", 90, 9, 18, 7),
+(14, "Belts", 150, 9, 22, 8),
+(15, "Hoses", 99, 14, 26, 8);
+SELECT * FROM autoparts;
+--what is the sum ordered by aisle
+SELECT aisle, SUM(quantity) FROM autoparts GROUP BY aisle;
+
+-- what is the cost and selling price ordered by quantity of items
+SELECT name, cost, selling_price FROM autoparts order by quantity;
