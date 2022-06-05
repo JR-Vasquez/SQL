@@ -1,0 +1,30 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    occupation TEXT);
+INSERT INTO famous_people (name, occupation) VALUES( 'MICHAEL JORDAN','basketball player');
+INSERT INTO famous_people (name, occupation) VALUES( 'TROY AIKMAN','football player');
+INSERT INTO famous_people (name, occupation) VALUES( 'DWAYNE JOHNSON','movie star');
+INSERT INTO famous_people (name, occupation) VALUES( 'JOSE ALTUVE','baseball player');
+INSERT INTO famous_people (name, occupation) VALUES( 'TIM DUNCAN','basketball player');
+INSERT INTO famous_people (name, occupation) VALUES( 'MICHAEL SCOTT','salesman');
+INSERT INTO famous_people (name, occupation) VALUES( 'WADE BOWEN','musician');
+INSERT INTO famous_people (name, occupation) VALUES( 'DOCTOR STRANGE','wizard');
+
+CREATE TABLE location (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    city TEXT);
+INSERT INTO location (person_id,city) VALUES('1','Chicago');
+INSERT INTO location (person_id,city) VALUES('2','Dallas');
+INSERT INTO location (person_id, city) VALUES('3','Los Angeles');
+INSERT INTO location (person_id,city) VALUES('4','Houston');
+INSERT INTO location (person_id,city) VALUES('5','San Antonio');
+INSERT INTO location (person_id,city) VALUES('6','Scranton');
+INSERT INTO location (person_id,city) VALUES('7','Texas');
+INSERT INTO location (person_id,city) VALUES('8','New York');
+SELECT * FROM location;
+SELECT * FROM famous_people;
+
+SELECT f.name, l.city FROM famous_people f
+    JOIN location l
+    ON f.id = l.person_id;
